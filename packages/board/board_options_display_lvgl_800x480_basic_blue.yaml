@@ -183,7 +183,7 @@ lvgl:
                   text_color: ${color_2}
                   align: CENTER
             on_click:
-              - lvgl.page.show: page_status
+              - lvgl.page.show: page_status2
 
 
         # ── ROW 1 : Faults Status | Battery SoC | Charge Status ────────
@@ -935,10 +935,28 @@ lvgl:
     - id: page_status
       bg_color: ${color_bg}
       widgets:
-
-        # ── NAV BUTTONS ───────────────────────────────────
+        # ── NAV BUTTONS (bottom-right, always visible) ───
         - button:
-            id: btn_p1_s
+            id: btn_p1
+            x: 610
+            y: 440
+            width: 50
+            height: 32
+            bg_color: ${color_3}
+            border_width: 2
+            border_color: ${color_5}
+            radius: 6
+            widgets:
+              - label:
+                  text: "P1"
+                  text_font: font_14
+                  text_color: ${color_5}
+                  align: CENTER
+            on_click:
+              - lvgl.page.show: page_battery
+
+        - button:
+            id: btn_p2
             x: 670
             y: 440
             width: 50
@@ -949,31 +967,33 @@ lvgl:
             radius: 6
             widgets:
               - label:
-                  text: "P1"
+                  text: "P2"
                   text_font: font_14
                   text_color: ${color_2}
                   align: CENTER
             on_click:
-              - lvgl.page.show: page_battery
-
+              - lvgl.page.show: page_status
+              
         - button:
-            id: btn_p2_s
+            id: btn_p3
             x: 730
             y: 440
             width: 50
             height: 32
-            bg_color: ${color_3}
-            border_width: 2
-            border_color: ${color_5}
+            bg_color: ${color_panel}
+            border_width: 1
+            border_color: ${color_2}
             radius: 6
             widgets:
               - label:
-                  text: "P2"
+                  text: "P3"
                   text_font: font_14
-                  text_color: ${color_5}
+                  text_color: ${color_2}
                   align: CENTER
             on_click:
-              - lvgl.page.show: page_status
+              - lvgl.page.show: page_status2
+
+
 
         # ── ROW 1 : Charging status | Charge instruction | Discharge instruction | Last Complete Charge ──
         # Charging status
@@ -1428,3 +1448,70 @@ lvgl:
                   text: "---"
                   text_font: font_14
                   text_color: ${color_1}
+                  
+    # ┌─────────────────────────────────────────────────────┐
+    # │ PAGE 3 — STATUS                                     │
+    # └─────────────────────────────────────────────────────┘
+    - id: page_status2
+      bg_color: ${color_bg}
+      widgets:
+
+        # ── NAV BUTTONS ───────────────────────────────────
+        # ── NAV BUTTONS (bottom-right, always visible) ───
+        - button:
+            id: btn_p1
+            x: 610
+            y: 440
+            width: 50
+            height: 32
+            bg_color: ${color_3}
+            border_width: 2
+            border_color: ${color_5}
+            radius: 6
+            widgets:
+              - label:
+                  text: "P1"
+                  text_font: font_14
+                  text_color: ${color_5}
+                  align: CENTER
+            on_click:
+              - lvgl.page.show: page_battery
+
+        - button:
+            id: btn_p2
+            x: 670
+            y: 440
+            width: 50
+            height: 32
+            bg_color: ${color_panel}
+            border_width: 1
+            border_color: ${color_2}
+            radius: 6
+            widgets:
+              - label:
+                  text: "P2"
+                  text_font: font_14
+                  text_color: ${color_2}
+                  align: CENTER
+            on_click:
+              - lvgl.page.show: page_status
+              
+        - button:
+            id: btn_p3
+            x: 730
+            y: 440
+            width: 50
+            height: 32
+            bg_color: ${color_panel}
+            border_width: 1
+            border_color: ${color_2}
+            radius: 6
+            widgets:
+              - label:
+                  text: "P3"
+                  text_font: font_14
+                  text_color: ${color_2}
+                  align: CENTER
+            on_click:
+              - lvgl.page.show: page_status2
+
