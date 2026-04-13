@@ -1515,3 +1515,32 @@ lvgl:
             on_click:
               - lvgl.page.show: page_status2
 
+        # ── ROW 1 : Charging status | Charge instruction | Discharge instruction | Last Complete Charge ──
+        # Charging status
+        - obj:
+            x: 20
+            y: 10
+            width: 178
+            height: 60
+            bg_color: ${color_panel}
+            border_width: 1
+            border_color: ${color_3}
+            radius: 6
+            widgets:
+              - label:
+                  x: 0
+                  y: 5
+                  width: 100%
+                  text: "Charging status"
+                  text_font: font_14
+                  text_color: ${color_2}
+                  text_align: CENTER
+              - label:
+                  id: lbl_charging_status
+                  x: 0
+                  y: 30
+                  width: 100%
+                  text: "---"
+                  text_font: font_18
+                  text_color: ${color_5}
+                  text_align: CENTER
