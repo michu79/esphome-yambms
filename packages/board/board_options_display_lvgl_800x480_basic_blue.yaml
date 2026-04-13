@@ -166,7 +166,7 @@ lvgl:
             on_click:
               - lvgl.page.show: page_status
               
-            - button:
+        - button:
             id: btn_p3
             x: 730
             y: 440
